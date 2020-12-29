@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+  #output {
+    background-color: #eeeeee;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    min-height: 45%;
+    margin-bottom: 5em;
+  }
+  #input {}
+  #button {}
+</style>
+<script>
+  function addUpTo()
+  {
+    var num1 = parseFloat(document.getElementById("input").value);
+    var num2 = 0;
+    var outputStr = "";
+    document.getElementById("output").innerHTML = outputStr;
+    try
+    {
+      //using try and catch to check to see if the input meets the parameters neccessary.
+     if(num1 == "")  throw "is empty";
+     if(isNaN(num1)) throw "is not a number";
+     num1 = Number(num1);
+     if(num1 > 1000)   throw "is too high";
+     if(num1 < 0)  throw "is too low";
+    }
+    catch(err)
+    {
+      //Use an alert box to display the error.
+       alert("Input " + err);
+    }
+    for (var x = 1; x <= num1; x++)
+    {
+      //Use a for loop to do the math. I have x increase by 1 and then add it to num2 each time it loops, then I set the added number to the output.
+      num2 += x
+      outputStr = num2;
+      document.getElementById("output").innerHTML = outputStr;
+    }
+  }
+</script>
+</head>
+<body>
+  <div id="output">
+  </div>
+  <input type="text" id="input">
+  <input type="button" id="button" value="Submit" onclick="addUpTo()">
+</body>
+</html>
