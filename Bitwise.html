@@ -1,0 +1,49 @@
+<html>
+<head>
+<style>
+  #output {
+    background-color: #eeeeee;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    min-height: 45%;
+    margin-bottom: 5em;
+  }
+  #input {}
+  #button {}
+</style>
+<script>
+  function bitwiseAND()
+  {
+    var num1 = document.getElementById("input1").value;
+    var num2 = document.getElementById("input2").value;
+    var result = (num1 & num2);
+    var outputStr = result.toString();
+    document.getElementById("output").innerHTML = outputStr
+  }
+  function bitwiseOR()
+  {
+    var num1 = document.getElementById("input1").value;
+    var num2 = document.getElementById("input2").value;
+    var result = (num1 | num2);
+    var outputStr = result.toString();
+    document.getElementById("output").innerHTML = outputStr
+  }
+  function bitwiseXOR()
+  {
+    var num1 = document.getElementById("input1").value;
+    var num2 = document.getElementById("input2").value;
+    var result = (num1 ^ num2);
+    var outputStr = result.toString();
+    document.getElementById("output").innerHTML = outputStr
+  }
+</script>
+</head>
+<body>
+  <div id="output">
+  </div>
+  <input type="text" id="input1">
+  <input type="text" id="input2">
+  <input type="button" id="button" value="AND" onclick="bitwiseAND()">
+  <input type="button" id="button" value="OR" onclick="bitwiseOR()">
+  <input type="button" id="button" value="XOR" onclick="bitwiseXOR()">
+</body>
+</html>
